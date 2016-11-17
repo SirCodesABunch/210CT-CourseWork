@@ -39,57 +39,47 @@ def postorder(tree):
     if(tree.right!=None):
         postorder(tree.right)
     print (tree.value)
-  
-
+#S = []
+#S.append(i)
+#S.pop() -> 10
+#S = [3,6,8,9]
 def in_order(tree):
 
 
-    previousLeft = []
-    previousRight = []
-    x = True
+    treeStack = [tree]
 
-    while( x == True):
+    c = 1
+    
 
-        if tree.left != None:
-            previousLeft.append(tree.value)
+    while( treeStack != None):
+        
+
+        l = treeStack[c-1]
+
+        if l.left != None:
+            treeStack.append(tree.left)
             tree = tree.left
-            continue
-        print (tree.value)
-
-        if tree.right != None:
-            previousRight.append(tree.value)
-            tree=tree.right
+            c = c + 1
             continue
 
-        if len(previousLeft) > len (previousRight):
-            largestLength = len(previousLeft)
+        x = treeStack.pop()
 
-        else:
-            largestLength = len (previousRight)
+        print (x.value)
 
-        leftExcced = False
-        rightExcced = False
-            
+        r = treeStack[c-1]
 
-        for i in range(0,largestLength):
-            
 
-            if i > len(previousRight)-1:
-                rightExcced = True
+        if r.right != None:
+            tree = tree.right
+            treeStack.append(tree)
+            c = c + 1
+            continue
 
-            if i > len(previousLeft)-1:
-                leftExcced = True
+        print(x.value)
 
-            if leftExcced == False:
-                print (previousLeft[i])
 
-            if rightExcced == False:
-                print (previousRight[i])
+        
 
-        print(previousLeft)
-        print(previousRight)
-
-        x = False
 
 
 if __name__ == '__main__':
