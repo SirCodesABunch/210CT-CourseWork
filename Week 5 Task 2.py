@@ -3,11 +3,13 @@ class Node(object):
           self.value=value
           self.next=None
           self.prev=None
+
 class List(object):
      def __init__(self):
           self.head=None
           self.tail=None
      def insert(self,n,x):
+          #Not actually perfect: how do we prepend to an existing list?
           if n!=None:
                x.next=n.next
                n.next=x
@@ -22,11 +24,16 @@ class List(object):
      def display(self):
           values=[]
           n=self.head
-          while n!=None:
-               values.append(int(n.value))
+          c = 0
+          print (n)
+          while n !=None:
+               values.append(str(n.value))
                n=n.next
-               print (values)
-
+               print (values[c])
+               c = c+1
+               print ("Boop!")
+          print ("Stopping!")
+               
      def deleteNode(self, delNode):
           if delNode.next != None:
                delNode.next.prev = delNode.prev
@@ -38,17 +45,13 @@ class List(object):
           else:
                print ("Head has been reassigned!")
                self.head = delNode.next
-
           print ("Node: " + int(delNode.value) + " Deleted.")
           delNode = None
-
-                      
-
-            
-          
+     
 if __name__ == '__main__':
      l=List()
      l.insert(None, Node(4))
      l.insert(l.head,Node(6))
      l.insert(l.head,Node(8))
+     l.insert(l.head,Node(2))
      l.display()
