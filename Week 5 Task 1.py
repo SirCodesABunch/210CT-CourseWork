@@ -4,56 +4,54 @@ l = [7,1,3,4,1,1,2,6,7]
 
 def subList(l):
 
+    c = 0
+    store = []
+    for j in range(0,len(l)):
 
-    store = [0]
-    for i in range(0,len(l)):
-        c = i
+        if j+1 >= len(l)-1:
+            print ("//Reached the end of the list!//")
+            t = [j+1 , c+1]
+            store.append(t)
+            c = 0
+            break
 
-        for j in range(c,len(l)):
-
-            if j == len(l)-1:
-                print ("//Reached the end of the list!//")
-                #store.append(j)
-                break
+        if l[j] < l[j+1]:
+            c = c+1
+            print ("//Bump//")
             
+            continue
 
-            if j+1 > len(l)-1:
-                print ("//Reached the end of the list!//")
-                store.append(j)
-                break
+        print ("//Adding to store//End of Loop//")
 
-            if l[j] < l[j+1]:
-                print ("//Bump//")
-                continue
-
-            print ("//Adding to store//End of Loop//")
-
-            store.append(j+1)
+        t = [j+1 , c+1]
+        store.append(t)
+        c = 0
 
     print (store)
 
-    compare = []
-
-    for x in range(0,len(store)):
-
-        if x+1 > len(store)-1 or x > len(store)-1:
-            break
-        
-        f = range(store[x],store[x+1])
-        if len(f) > len(compare):
-            compare = list(f)
-
-
-    for a in range(0,len(compare)):
-
-        if a+1 > len(compare)-1:
-            compare[a] = l[compare[a]]
-            break
-
-        compare[a] = l[compare[a]]
+    current = 0
     
-    return (compare)
 
+    for i in range(0,len(store)):
+
+        if store[i [1]] > store[i+1[1]]:
+            current = store[i]
+        else:
+            current = store[i+1]
+
+    return current
+
+    
+
+    
+
+    
+
+
+
+
+
+    return store
 
         
         
