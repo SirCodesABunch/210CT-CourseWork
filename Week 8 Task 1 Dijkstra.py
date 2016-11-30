@@ -3,13 +3,15 @@ from queue import *
 class Node():
     def __init__(self,value):
         self.value = value
+        #self.edges now stores the weight/cost of the edges. [[LINKEDNODE,COST,GRAPH],[LINKEDNODE,COST,GRAPH]]
         self.edges = []
+        self.tw = None
 
     def get_edges(self):
         return self.edges
 
-    def update_Edges(self,G,X):
-        self.edges.append([X,G])
+    def update_Edges(self,G,X,C):
+        self.edges.append([X,C,G])
 
     def get_value(self):
         return self.value
@@ -28,13 +30,31 @@ class Graph():
                 return self.nodes[i]
         
 
-    def graph_Add_Edges(self,N,X):
+    def graph_Add_Edges(self,N,X,C):
         #Creates a Bi-Directional relationship between the two
         N = self.get_node_pointers(N)
         X = self.get_node_pointers(X)
 
-        N.update_Edges(self,X)
-        X.update_Edges(self,N)
+        N.update_Edges(self,X,C)
+        X.update_Edges(self,N,C)
+
+    def dijkstra(self,src,d):
+        c = src
+
+        for i in range(0,len(self.nodes)):
+            #in this case str - 8 means infinity
+            self.nodes[i].tw = '8'
+
+        src.tw = 0
+        visited = []
+
+        while c != d:
+            for e in range(0,len(c.get_edges())):
+                #if the tw of the current node  + the COST of one of its 'neighbour' nodes.
+                if c.tw + c.get_edges()[e][1] < c.get_edges()[e][1]
+
+        
+        
 
     def depth_First_Search(self,N):
         s = []
@@ -97,10 +117,10 @@ g.graph_Add_Node(Node(3))
 g.graph_Add_Node(Node(4))
 
 
-g.graph_Add_Edges(1,2)
-g.graph_Add_Edges(2,3)
-g.graph_Add_Edges(3,4)
-g.graph_Add_Edges(2,4)
+g.graph_Add_Edges(1,2,2)
+g.graph_Add_Edges(2,3,6)
+g.graph_Add_Edges(3,4,9)
+g.graph_Add_Edges(2,4,8)
 
 g.depth_First_Search(g.get_node_pointers(1))
 g.breath_First_Search(g.get_node_pointers(1))
