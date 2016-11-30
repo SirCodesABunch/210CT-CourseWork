@@ -1,0 +1,54 @@
+
+Needs work:
+
+- 5 big
+- 3 small
+
+Week 1
+1.1 - big O
+
+1. 2- BROKE big o 
+
+
+Week 2
+1. perfect square BIG O Pesudeo Code//Check this
+
+2. Matrixs = Complete pesudeo code - BIG O
+
+Week 3
+Task 3 - broke
+task 1,2 from streach
+
+week 4 
+Comments, Pesudeo code, Big O
+
+Week 5:
+SubLists - DONE //Check
+
+Linked Lists - DONE
+
+Week 6:
+TREE SORT - DONE
+
+Week 7:
+Graph - DONE
+
+BFS/DFS Travesal - DONE
+
+Week 8:
+Dijsktra - CODE
+
+
+
+// Put everything in word DOC
+// Write aboue week 1's tasks!
+
+For both previous tasks, provide a basic answer (no fancy solution or mathematical proof required) to
+the following questions:
+a. Does your algorithm have defined inputs and outputs?
+b. Can you guarantee that it terminates?
+c. Is it specified in a clear and concise manner?
+d. Does your algorithm produce the correct result for all instances?
+
+
+-Do the Big o Notation//Record what needs the pesudeocode doing - 
