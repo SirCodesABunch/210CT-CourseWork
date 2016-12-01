@@ -23,7 +23,7 @@ week 4
 Comments, Pesudeo code, Big O
 
 Week 5:
-SubLists - DONE //Check
+SubLists - DONE //Make it display both sublists if they are of equal length.
 
 Linked Lists - DONE
 
@@ -38,7 +38,7 @@ BFS/DFS Travesal - DONE
 Week 8:
 Dijsktra - CODE
 
-
+//Supposed to leave debug code in so ignore it for big O
 
 // Put everything in word DOC
 // Write aboue week 1's tasks!
