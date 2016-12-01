@@ -4,7 +4,7 @@ l = [7,1,3,4,1,1,2,6,7]
 
 
 def subList(l):
-    #ADAPTED BINARY SEARCH
+    #Start Search
     c = 0
     store = []
     for j in range(0,len(l)):
@@ -30,7 +30,7 @@ def subList(l):
         t = [j+1 , c+1]
         store.append(t)
         c = 0
-    #END OF BINARY SEARCH
+    #END OF Search
 
     #print (store)
 
